@@ -1,0 +1,11 @@
+# Site settings
+title: Setnik Polonia Inter
+email: setnikpolonia@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+
+instagram_username: setnik.sez.polonia
+
+# Build settings
+markdown: kramdown
