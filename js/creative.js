@@ -49,8 +49,9 @@
             var miniatureSrc = this.children[0].src;
             modalImage.src = miniatureSrc.replace("_mini", "");
 
-            if (this.alt) {
-                modalCaption.innerHTML = this.alt;
+            var itemCaption = this.getElementsByClassName("gallery-item-name")[0];
+            if (itemCaption) {
+                modalCaption.innerHTML = itemCaption.innerText;
             }
         } 
     }
