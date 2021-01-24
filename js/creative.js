@@ -35,6 +35,38 @@
         }
     );
 
+    // Image preview modal
+    var modal = document.getElementById("siteModal");
+    var span = document.getElementsByClassName("close")[0];
+    var imageElements = document.getElementsByClassName("portfolio-box");
+    var modalImage = document.getElementById("modalImage");
+    var modalCaption = document.getElementById("modalCaption");
+
+    for (var i = 0; i < imageElements.length; i++) {
+        imageElements[i].onclick = function() {
+            modal.style.display = "block";
+
+            var miniatureSrc = this.children[0].src;
+            modalImage.src = miniatureSrc.replace("_mini", "");
+
+            if (this.alt) {
+                modalCaption.innerHTML = this.alt;
+            }
+        } 
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          modalImage.src = "";
+          modalCaption.innerHTML = "";
+        }
+    }
+
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 
